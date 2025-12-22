@@ -6,7 +6,7 @@ import planPlusImage from "@/assets/plan-plus.jpg";
 
 export const CONFIG = {
   // Admin WhatsApp number (include country code without +)
-  ADMIN_WHATSAPP: "2348012345678",
+  ADMIN_WHATSAPP: "2349134719121",
   
   // Demo video URL (YouTube embed or custom video)
   DEMO_VIDEO_URL: "https://www.youtube.com/embed/dQw4w9WgXcQ",
