@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import PricingCard from "@/components/PricingCard";
 import { PLANS, CONFIG } from "@/config/fortunex";
-import { ArrowLeft, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import logoGold from "@/assets/logo-gold.png"; // ← Your custom golden FortuneX logo
 
 const Pricing = () => {
   return (
@@ -11,8 +12,8 @@ const Pricing = () => {
       <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-gold flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-foreground" />
+            <div className="w-8 h-8 rounded-lg gradient-gold flex items-center justify-center overflow-hidden">
+              <img src={logoGold} alt="FortuneX Logo" className="w-6 h-6 object-contain" />
             </div>
             <span className="text-xl md:text-2xl font-display font-bold text-foreground">
               Fortune<span className="text-gold">X</span>
