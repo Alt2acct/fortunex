@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { generateWhatsAppUrl, PLANS, CONFIG } from "@/config/fortunex";
-import { Sparkles, Copy, Check } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import logoGold from "@/assets/logo-gold.png"; // ← Your custom golden FortuneX logo
 
 // Payment account details - edit these values
 const PAYMENT_ACCOUNT = {
@@ -46,7 +47,7 @@ const Payment = () => {
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+    return `\( {mins.toString().padStart(2, "0")}: \){secs.toString().padStart(2, "0")}`;
   };
 
   const copyAccountNumber = async () => {
@@ -69,7 +70,7 @@ const Payment = () => {
 
   const handlePaymentMade = () => {
     const reference = `FX${Date.now()}`;
-    const whatsappMessage = `Hello Admin, I want to register for ${planName} (₦${amount.toLocaleString()}). My payment reference is ${reference} (Send your payment screenshot). Please verify my payment.`;
+    const whatsappMessage = `Hello Admin, I want to register for \( {planName} (₦ \){amount.toLocaleString()}). My payment reference is ${reference} (Send your payment screenshot). Please verify my payment.`;
     const whatsappUrl = generateWhatsAppUrl(whatsappMessage);
     window.open(whatsappUrl, "_blank");
   };
@@ -80,8 +81,8 @@ const Payment = () => {
       <nav className="bg-background border-b border-border">
         <div className="container flex items-center justify-center h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg gradient-gold flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-foreground" />
+            <div className="w-8 h-8 rounded-lg gradient-gold flex items-center justify-center overflow-hidden">
+              <img src={logoGold} alt="FortuneX Logo" className="w-6 h-6 object-contain" />
             </div>
             <span className="text-xl md:text-2xl font-display font-bold text-foreground">
               Fortune<span className="text-gold">X</span>
