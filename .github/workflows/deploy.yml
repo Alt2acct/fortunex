@@ -31,7 +31,10 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --base /fortunex/  # This fixes the asset paths for your repo subpath
+        run: npm run build -- --base /fortunex/  # Fixes asset paths
+
+      - name: Setup 404 Page
+        run: cp dist/index.html dist/404.html  # This fixes the routing 404s
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
