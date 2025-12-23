@@ -71,7 +71,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start animate-fade-up-delay-3">
                 <Link to="/pricing">
                   <Button variant="gold" size="xl" className="w-full sm:w-auto">
-                    Start Earning Free
+                    Start Earning Now
                     <ArrowRight className="w-5 h-5" />
                   </Button>
                 </Link>
